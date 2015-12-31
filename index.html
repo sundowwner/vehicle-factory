@@ -9,6 +9,22 @@
     </head>
     <body>
 <h1>Hello World</h1>
+<div class="well">
+    <form class="form-inline"onsubmit="app.createVehicle(event)">
+        <input type="text" class="form-control" id="inputHP" placeholder="Horsepower....">
+        <input type="text" class="form-control" id="inputnumSeat" placeholder="Seating...">
+        <input type="text" class="form-control" id="inputManu" placeholder="manufacturer....">
+        <select class="form-control" id="inputType" onchange="app.selectType(this)">
+            <option value="Car">Car</option>
+            <option value="Seating">Seating</option>
+            <option value="Manufacturer">Manufacturer</option>
+
+        </select>
+        <span id="secondaryPropInput"></span>
+        <button type="button" class="btn btn-info">Submit</button>
+    </form>
+
+</div>
 <div id="vehicle-results">
 
 </div>

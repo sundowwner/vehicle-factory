@@ -58,5 +58,21 @@ var app;
         app.vehicles.forEach(function (item) { return elemString += "\n        <div class=\"col=sm=12\">\n            <div class=\"well\">\n                <h1>" + item.constructor.toString().match(/\w+/g)[1] + "</h1>\n                <h3>horsepower: " + item.horsepower + "</h3>\n                <h3>manufacturer: " + item.numSeated + "</h3>\n                <h3>number of seats: " + item.manufacturer + "</h3>\n            </div>\n        </div>\n        "; });
         document.getElementById("vehicle-results").innerHTML = elemString;
     }
+    function selectType(select) {
+        var placeholder;
+        if (select.value === "Car")
+            placeholder = "Category...";
+        if (select.value === "Seating")
+            placeholder = "Number of Engines....";
+        if (select.value === "Manufacturer")
+            placeholder = "Does it look cool? (yes, no)";
+        console.log(select.value);
+        document.getElementById("secondaryPropInput").innerHTML = "<input class=\"form-control\" type=\"text\" id=\"inputSecondary\" placeholder=\"" + placeholder + "\"/>";
+    }
+    app.selectType = selectType;
+    function createVehicle(event) {
+        event.preventDefault();
+        console.log("Create Vehicle");
+    }
     displayVehicles();
 })(app || (app = {}));

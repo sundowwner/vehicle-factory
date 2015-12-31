@@ -61,7 +61,20 @@ namespace app{
         `);
         document.getElementById("vehicle-results").innerHTML = elemString;
     }
+    export function selectType(select: HTMLSelectElement)   {
+        let placeholder: string;
+        if(select.value ==="Car") placeholder = "Category...";
+        if(select.value === "Seating") placeholder = "Number of Engines....";
+        if (select.value === "Manufacturer") placeholder = "Does it look cool? (yes, no)";
 
+        console.log(select.value);
+        document.getElementById("secondaryPropInput").innerHTML = `<input class="form-control" type="text" id="inputSecondary" placeholder="${placeholder}"/>`
+    }
+    function createVehicle(event: Event)    {
+        event.preventDefault();
+        console.log("Create Vehicle");
+    }
     //call functions
 displayVehicles();
+
 }
