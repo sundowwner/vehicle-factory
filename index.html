@@ -1,33 +1,34 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>app</title>
-        <!-- Latest compiled and minified CSS -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" >
-<link rel="stylesheet" href="http://bootswatch.com/slate/bootstrap.min.css" >
-<link rel="stylesheet" href="style.css">
-    </head>
-    <body>
-<h1>Hello World</h1>
-<div class="well">
-    <form class="form-inline"onsubmit="app.createVehicle(event)">
-        <input type="text" class="form-control" id="inputHP" placeholder="Horsepower....">
-        <input type="text" class="form-control" id="inputnumSeat" placeholder="Seating...">
-        <input type="text" class="form-control" id="inputManu" placeholder="manufacturer....">
-        <select class="form-control" id="inputType" onchange="app.selectType(this)">
-            <option value="Car">Car</option>
-            <option value="Seating">Seating</option>
-            <option value="Manufacturer">Manufacturer</option>
+<head>
+    <title>app</title>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" >
+    <link rel="stylesheet" href="http://bootswatch.com/slate/bootstrap.min.css" >
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Hello World</h1>
+    <div class="well">
+        <form class="form-inline"onsubmit="app.createVehicle(event)">
+            <input type="text" class="form-control" id="inputHP" placeholder="Horsepower....">
+            <input type="text" class="form-control" id="inputnumSeat" placeholder="Seating...">
+            <input type="text" class="form-control" id="inputManu" placeholder="manufacturer....">
+            <select class="form-control" id="inputType" onchange="app.selectType(this)">
+                <option value="Car">Car</option>
+                <option value="Seating">Seating</option>
+                <option value="Manufacturer">Manufacturer</option>
 
-        </select>
-        <span id="secondaryPropInput"></span>
-        <button type="button" class="btn btn-info">Submit</button>
-    </form>
+            </select>
+            <span id="secondaryPropInput"></span>
+            <button type="submit" class="btn btn-info">Submit</button>
+        </form>
 
-</div>
-<div id="vehicle-results">
+    </div>
+    <div id="vehicle-results">
 
-</div>
+    </div>
+    <script src="node_modules/jquery/dist/jquery.min.js"></script>
     <script src="app.js" charset="utf-8"></script>
-    </body>
+</body>
 </html>

@@ -55,7 +55,7 @@ var app;
     app.vehicles = [boat, car, motorcycle];
     function displayVehicles() {
         var elemString = "";
-        app.vehicles.forEach(function (item) { return elemString += "\n        <div class=\"col=sm=12\">\n            <div class=\"well\">\n                <h1>" + item.constructor.toString().match(/\w+/g)[1] + "</h1>\n                <h3>horsepower: " + item.horsepower + "</h3>\n                <h3>manufacturer: " + item.numSeated + "</h3>\n                <h3>number of seats: " + item.manufacturer + "</h3>\n            </div>\n        </div>\n        "; });
+        app.vehicles.forEach(function (item) { return elemString += "\n        <div class=\"col=sm=12\">\n            <div class=\"well\">\n                <h1>" + item.constructor.toString().match(/\w+/g)[1] + "</h1>\n                <h3>horsepower: " + item.horsepower + "</h3>\n                <h3>manufacturer: " + item.manufacturer + "</h3>\n                <h3>number of seats: " + item.numSeated + "</h3>\n            </div>\n        </div>\n        "; });
         document.getElementById("vehicle-results").innerHTML = elemString;
     }
     function selectType(select) {
@@ -73,6 +73,20 @@ var app;
     function createVehicle(event) {
         event.preventDefault();
         console.log("Create Vehicle");
+        var horsepower = $("#inputHP").val();
+        var numSeats = $("#inputNumSeats").val();
+        var manufacturer = $("#inputManu").val();
+        var type = $("#inputType").val();
+        var secondary = $("#inputSecondary").val();
+        var vehicle;
+        if (type === "Car")
+            vehicle = new app.classes.Car(horsepower, numSeats, manufacturer, secondary);
+        if (type === "Boat")
+            vehicle = new app.classes.Boat(horsepower, numSeats, manufacturer, secondary);
+        if (type === "Motorcycle")
+            vehicle = new app.classes.Motorcycle(horsepower, numSeats, manufacturer, secondary);
+        app.vehicles.push(vehicle);
+        displayVehicles();
     }
     displayVehicles();
 })(app || (app = {}));
